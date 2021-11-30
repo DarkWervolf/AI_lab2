@@ -45,9 +45,6 @@ def missing_value_checker(data):
 train_data = pd.read_csv('train.csv')
 test_data = pd.read_csv('test.csv')
 
-print(train_data.head())  # just for understanding, what is happening
-print(test_data.head())
-
 missing_value_checker(test_data)
 
 test_edited = test_data.drop(['Alley', 'FireplaceQu', 'PoolQC', 'Fence', 'MiscFeature'], axis=1)  # removing the titles
@@ -94,7 +91,6 @@ history = model.fit(X_train, y_train, epochs=100, batch_size=100)
 # print(history.history)
 
 history1 = history
-print("plot next")
 pd.DataFrame(history.history["loss"]).plot()
 plt.ylabel('loss')
 plt.xlabel('epoch')
